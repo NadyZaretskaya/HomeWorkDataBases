@@ -1,8 +1,16 @@
-Если я разрешу конфликт(
-Здесь будут запросы
-к учебной базе данных
-<<<<<<< HEAD
-Дописываю какой-то текст
-=======
-Дописываю какой-то другой текст
->>>>>>> commit for rebase on master
+USE Step;
+SELECT price FROM orders
+WHERE price>5000 AND customer_id is NULL
+ORDER BY price DESC;
+
+SELECT price FROM orders
+WHERE price>5000 AND customer_id is NOT NULL
+ORDER BY price;
+
+SELECT customer_id FROM orders
+WHERE order_id>5 AND customer_id is NOT NULL
+ORDER BY customer_id;
+
+SELECT A.address, A.last_name as Surname_1, A.first_name as Name_1, B.last_name as Surname_2, B.first_name as Name_2 FROM Customers A, Customers B 
+WHERE A.id <> B.id and A.address = B.address 
+ORDER BY A.address;
